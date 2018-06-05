@@ -1,0 +1,29 @@
+version: 1
+disable_existing_loggers: false
+# Configuring the default (root) logger is highly recommended
+root:
+  level: NOTSET
+  handlers: [console, logfile]
+  propagate: false
+loggers:
+  # Logging from my application
+  standard_logger:
+    level: NOTSET
+    handlers: [console, logfile]
+    propagate: false
+handlers:
+  logfile:
+    class: logging.FileHandler
+    filename: log.txt
+    formatter: simpleFormatter
+    level: NOTSET
+    mode: 'w'
+  console:
+    class: logging.StreamHandler
+    stream: ext://sys.stdout
+    formatter: simpleFormatter
+    level: NOTSET
+formatters:
+  simpleFormatter:
+    format: '%(name)s %(asctime)s %(levelname)s %(message)s'
+    datefmt: '%d/%m/%Y %H:%M:%S'

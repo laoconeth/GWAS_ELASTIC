@@ -1,0 +1,45 @@
+experiment_name: 'default'
+experiment_description:
+    - 'experiment_name'
+    - 'model'
+    - 'y_given'
+    - 'a'
+    - 'lambda'
+    - 'intercept'
+    - 'p_value'
+    - 'trial_no'
+trial_no: 0
+a:
+    - 1.0
+    - 0.5
+    - 0.3
+lambda: 'auto'
+intercept: false
+p_value: 0.05
+experiment_dir: 'experiments'
+data_dir: 'data'
+model_dir: 'models'
+model: 'proposed'
+model_options:
+    feature_dependent: false
+data_name: 'MusicGenres'
+batch_size: 64
+max_epoch: 500
+synth_dir: 'synthetic'
+dataset_utilization: 0.5
+train_val_split: 0.2
+no_of_annotators: 44
+synth_roll: 102
+proposed_model:
+    x_dim:
+        - 124
+    h_dim:
+        - 50
+        - 50
+    y_dim: 10
+    z_dim: 10
+
+y_given: false
+a_ll_coeff: 3.0
+surrogate_cutoff: 999999
+optimizer: 'adam'
